@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Story - Transform Your Life into a Beautiful Novel</title>
+    <meta name="description" content="Transform your authentic life stories into professionally written novels using AI. From personal memories to published books through guided conversation.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basic Reset and Variables */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        :root {
+            --sage-50: #f6f8f6;
+            --sage-100: #e7ebe8;
+            --sage-200: #d4dbd6;
+            --sage-600: #5a7563;
+            --sage-700: #4a6352;
+            --sage-800: #3a4f42;
+            --warm-50: #fefcfb;
+            --warm-100: #faf6f0;
+            --warm-200: #f1e8d9;
+            --gold-500: #d4af37;
+            --gold-600: #b8941f;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, var(--sage-50), var(--warm-50));
+            min-height: 100vh;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 219, 214, 0.3);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            padding: 1rem 2rem;
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--sage-700);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--sage-700);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--sage-600);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--sage-700), var(--sage-600));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--sage-50), var(--warm-50));
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sage-800);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--sage-600);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(to right, var(--sage-700), var(--sage-600));
+            color: white;
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            letter-spacing: 0.025em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Features Grid */
+        .features {
+            padding: 6rem 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--sage-800);
+            margin-bottom: 3rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(212, 219, 214, 0.3);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: var(--sage-600);
+            line-height: 1.6;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--sage-800);
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+            border: 2px solid var(--gold-500);
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+        }
+        
+        .price-description {
+            color: var(--sage-600);
+            margin-bottom: 2rem;
+        }
+        
+        .features-list {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+        
+        .features-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--sage-700);
+        }
+        
+        .checkmark {
+            color: var(--gold-600);
+            margin-right: 0.75rem;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--sage-800);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Your Story</a>
+            <nav class="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#" class="btn-primary">Start Your Story</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Transform Your Life Into a Beautiful Novel</h1>
+                <p>Share your authentic stories through guided conversations. Our AI transforms your memories into professionally written novels in your chosen genre and style.</p>
+                <a href="#pricing" class="hero-cta">Start Your Story Journey - £99</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🗣️ Share Your Stories</h3>
+                        <p>Answer thoughtful questions about your life experiences, relationships, and memories through our guided conversation system.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎨 Choose Your Style</h3>
+                        <p>Select from multiple genres (romance, thriller, literary fiction) and famous author styles to shape your narrative.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🤖 AI Magic</h3>
+                        <p>Our advanced AI transforms your authentic experiences into compelling fiction while preserving emotional truth and relationships.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📖 Professional Publishing</h3>
+                        <p>Receive a beautifully formatted book with custom cover, premium typography, and professional editing.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📱 Multiple Formats</h3>
+                        <p>Get your story as a physical hardcover book, PDF, and EPUB for reading on any device.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>👨‍👩‍👧‍👦 Family Legacy</h3>
+                        <p>Create a lasting family heirloom that preserves your stories for future generations to treasure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>One Simple Price</h2>
+                <div class="pricing-card">
+                    <div class="price">£99</div>
+                    <p class="price-description">Everything you need to create your personal novel</p>
+                    
+                    <ul class="features-list">
+                        <li><span class="checkmark">✓</span> AI-guided story collection</li>
+                        <li><span class="checkmark">✓</span> Professional editing & formatting</li>
+                        <li><span class="checkmark">✓</span> Custom book cover design</li>
+                        <li><span class="checkmark">✓</span> Premium hardcover printing</li>
+                        <li><span class="checkmark">✓</span> Digital formats (PDF & EPUB)</li>
+                        <li><span class="checkmark">✓</span> Author biography page</li>
+                        <li><span class="checkmark">✓</span> Free shipping anywhere</li>
+                    </ul>
+                    
+                    <a href="#" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; font-size: 1.125rem;">Start Your Story Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>Your Story</h3>
+            <p>Transforming lives into literature, one story at a time.</p>
+            <p>&copy; 2025 Your Story. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add click handlers for CTA buttons
+        document.querySelectorAll('.btn-primary, .hero-cta').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('🚀 Ready to deploy! This will connect to your backend at: https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev\n\nNext steps:\n1. Upload this file to Netlify\n2. I\'ll update your backend CORS settings\n3. Your site will be live!');
+            });
+        });
+    </script>
+</body>
+</html>
