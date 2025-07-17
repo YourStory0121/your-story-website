@@ -8,6 +8,7 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js" rel="preload" as="script">
     
     <style>
         /* Basic Reset and Variables */
@@ -18,24 +19,36 @@
         }
         
         :root {
+            /* Sage green palette */
             --sage-50: #f6f8f6;
             --sage-100: #e7ebe8;
             --sage-200: #d4dbd6;
+            --sage-300: #b8c4bb;
             --sage-600: #5a7563;
             --sage-700: #4a6352;
             --sage-800: #3a4f42;
+            --sage-900: #2d3d33;
+            
+            /* Warm accents */
+            --cream-50: #fefcfb;
+            --cream-100: #faf6f0;
             --warm-50: #fefcfb;
             --warm-100: #faf6f0;
             --warm-200: #f1e8d9;
+            
+            /* Gold accents */
             --gold-500: #d4af37;
             --gold-600: #b8941f;
+            
+            /* Yellow for stars */
+            --yellow-500: #eab308;
         }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #2d3748;
-            background: linear-gradient(135deg, var(--sage-50), var(--warm-50));
+            background: #ffffff;
             min-height: 100vh;
         }
         
@@ -103,6 +116,9 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .btn-primary:hover {
@@ -110,158 +126,235 @@
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
         }
         
+        .btn-outline {
+            background: transparent;
+            color: var(--sage-700);
+            border: 2px solid var(--sage-300);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-outline:hover {
+            background: var(--sage-50);
+            transform: translateY(-2px);
+        }
+        
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--sage-100);
+            color: var(--sage-800);
+            border: 1px solid var(--sage-200);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--sage-50), var(--cream-50), var(--sage-100));
+            padding: 8rem 2rem 3rem;
+            margin-top: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .hero-content {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--sage-900);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        
+        .hero h1 .gradient-text {
+            background: linear-gradient(to right, var(--sage-700), var(--sage-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--sage-700);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+        .hero-cta {
+            background: var(--sage-700);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero-cta:hover {
+            background: var(--sage-800);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Trust indicators */
+        .trust-indicators {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            color: var(--sage-600);
+            margin-bottom: 4rem;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .star-icon {
+            color: var(--yellow-500);
+            fill: currentColor;
+        }
+        
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .feature-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+        }
+        
+        .feature-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+        }
+        
+        .feature-content {
+            position: absolute;
+            bottom: 0.75rem;
+            left: 0.75rem;
+            right: 0.75rem;
+            color: white;
+        }
+        
+        .feature-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .feature-desc {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+        
+        /* Icons */
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            display: inline-block;
+        }
+        
         /* Main Content */
         main {
-            margin-top: 80px;
-            padding: 2rem;
+            padding: 0;
         }
         
         .container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
         
-        /* Hero Section */
-        .hero {
+        /* Simple sections for now */
+        .simple-section {
+            padding: 6rem 2rem;
             text-align: center;
-            padding: 6rem 0;
-            background: linear-gradient(135deg, var(--sage-50), var(--warm-50));
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--sage-800);
-            margin-bottom: 1.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--sage-600);
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-cta {
-            display: inline-block;
-            background: linear-gradient(to right, var(--sage-700), var(--sage-600));
-            color: white;
-            padding: 1.25rem 2.5rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            letter-spacing: 0.025em;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Features Grid */
-        .features {
-            padding: 6rem 0;
-        }
-        
-        .features h2 {
-            text-align: center;
+        .simple-section h2 {
             font-size: 2.5rem;
             color: var(--sage-800);
-            margin-bottom: 3rem;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .feature-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(212, 219, 214, 0.3);
-            backdrop-filter: blur(4px);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            color: var(--sage-800);
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card p {
-            color: var(--sage-600);
-            line-height: 1.6;
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            padding: 6rem 0;
-            background: rgba(255, 255, 255, 0.5);
-        }
-        
-        .pricing h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--sage-800);
-            margin-bottom: 3rem;
-        }
-        
-        .pricing-card {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 1.5rem;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-            border: 2px solid var(--gold-500);
-        }
-        
-        .price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--sage-800);
-            margin-bottom: 1rem;
-        }
-        
-        .price-description {
-            color: var(--sage-600);
             margin-bottom: 2rem;
         }
         
-        .features-list {
-            text-align: left;
-            margin-bottom: 3rem;
-        }
-        
-        .features-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            color: var(--sage-700);
-        }
-        
-        .checkmark {
-            color: var(--gold-600);
-            margin-right: 0.75rem;
-            font-weight: bold;
+        .simple-section p {
+            font-size: 1.125rem;
+            color: var(--sage-600);
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         /* Footer */
@@ -291,21 +384,12 @@
                 gap: 1rem;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
+            .trust-indicators {
+                gap: 1rem;
             }
             
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card {
-                margin: 0 1rem;
-                padding: 2rem;
+            .hero {
+                padding: 6rem 1rem 2rem;
             }
         }
     </style>
@@ -318,7 +402,13 @@
             <nav class="nav-menu">
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#" class="btn-primary">Start Your Story</a>
+                <a href="#" class="btn-primary">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                    Start Your Story
+                </a>
             </nav>
         </div>
     </header>
@@ -327,66 +417,124 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <div class="container">
-                <h1>Transform Your Life Into a Beautiful Novel</h1>
-                <p>Share your authentic stories through guided conversations. Our AI transforms your memories into professionally written novels in your chosen genre and style.</p>
-                <a href="#pricing" class="hero-cta">Start Your Story Journey - £99</a>
-            </div>
-        </section>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div class="badge">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                                <path d="M5 3v4"/>
+                                <path d="M19 17v4"/>
+                                <path d="M3 5h4"/>
+                                <path d="M17 19h4"/>
+                            </svg>
+                            AI-Powered Personal Storytelling
+                        </div>
+                    </div>
+                    
+                    <h1>
+                        Transform Your Life<br>
+                        <span class="gradient-text">Into a Beautiful Story</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Share your memories through guided conversations and watch AI create a personalized novel featuring your family as characters. Perfect for preserving family legacy.
+                    </p>
 
-        <!-- Features Section -->
-        <section id="features" class="features">
-            <div class="container">
-                <h2>How It Works</h2>
+                    <!-- Primary CTAs -->
+                    <div class="hero-buttons">
+                        <a href="#" class="hero-cta">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                            Start Your Story Now
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="#features" class="btn-outline">
+                            See How It Works
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <svg class="icon star-icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            4.9/5 Customer Rating
+                        </div>
+                        <div class="trust-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7Z"/>
+                            </svg>
+                            Thousands of Stories Created
+                        </div>
+                        <div class="trust-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 12 2 2 4-4"/>
+                                <path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 1 0-8.953 8.953c.55-.055.998-.398.998-.95 0-.551-.448-1.006-.999-.95a8 8 0 1 1 7.954-7.954C20.005 11.448 20.449 12 21 12Z"/>
+                            </svg>
+                            Award-Winning AI Technology
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features & Benefits Showcase -->
                 <div class="features-grid">
+                    <!-- Grandparents Reading Image -->
                     <div class="feature-card">
-                        <h3>🗣️ Share Your Stories</h3>
-                        <p>Answer thoughtful questions about your life experiences, relationships, and memories through our guided conversation system.</p>
+                        <img 
+                            src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=800&h=600&fit=crop&crop=faces"
+                            alt="Happy grandparents reading with grandchild - family storytelling moments"
+                        />
+                        <div class="feature-overlay"></div>
+                        <div class="feature-content">
+                            <p class="feature-title">AI Character Images</p>
+                            <p class="feature-desc">Upload family photos for personalized character portraits</p>
+                        </div>
                     </div>
+
+                    <!-- Voice Recording Image -->
                     <div class="feature-card">
-                        <h3>🎨 Choose Your Style</h3>
-                        <p>Select from multiple genres (romance, thriller, literary fiction) and famous author styles to shape your narrative.</p>
+                        <img 
+                            src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&h=600&fit=crop&crop=faces"
+                            alt="Senior man using voice command technology - easy storytelling"
+                        />
+                        <div class="feature-overlay"></div>
+                        <div class="feature-content">
+                            <p class="feature-title">Voice Controls</p>
+                            <p class="feature-desc">Share stories naturally with voice recording - no typing needed</p>
+                        </div>
                     </div>
+
+                    <!-- Family Reading Together -->
                     <div class="feature-card">
-                        <h3>🤖 AI Magic</h3>
-                        <p>Our advanced AI transforms your authentic experiences into compelling fiction while preserving emotional truth and relationships.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>📖 Professional Publishing</h3>
-                        <p>Receive a beautifully formatted book with custom cover, premium typography, and professional editing.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>📱 Multiple Formats</h3>
-                        <p>Get your story as a physical hardcover book, PDF, and EPUB for reading on any device.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>👨‍👩‍👧‍👦 Family Legacy</h3>
-                        <p>Create a lasting family heirloom that preserves your stories for future generations to treasure.</p>
+                        <img 
+                            src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=800&h=600&fit=crop&crop=faces"
+                            alt="Multi-generational family reading together - storytelling bonds"
+                        />
+                        <div class="feature-overlay"></div>
+                        <div class="feature-content">
+                            <p class="feature-title">Family Legacy</p>
+                            <p class="feature-desc">Create lasting memories for generations - perfect gift for grandparents</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section -->
-        <section id="pricing" class="pricing">
+        <!-- Placeholder for next sections -->
+        <section id="features" class="simple-section">
             <div class="container">
-                <h2>One Simple Price</h2>
-                <div class="pricing-card">
-                    <div class="price">£99</div>
-                    <p class="price-description">Everything you need to create your personal novel</p>
-                    
-                    <ul class="features-list">
-                        <li><span class="checkmark">✓</span> AI-guided story collection</li>
-                        <li><span class="checkmark">✓</span> Professional editing & formatting</li>
-                        <li><span class="checkmark">✓</span> Custom book cover design</li>
-                        <li><span class="checkmark">✓</span> Premium hardcover printing</li>
-                        <li><span class="checkmark">✓</span> Digital formats (PDF & EPUB)</li>
-                        <li><span class="checkmark">✓</span> Author biography page</li>
-                        <li><span class="checkmark">✓</span> Free shipping anywhere</li>
-                    </ul>
-                    
-                    <a href="#" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; font-size: 1.125rem;">Start Your Story Now</a>
-                </div>
+                <h2>More sections coming next...</h2>
+                <p>Send me the next screenshot to add more components from your Replit homepage!</p>
             </div>
         </section>
     </main>
