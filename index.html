@@ -458,6 +458,95 @@
             margin-top: 1rem;
         }
         
+        /* See Your Story Come to Life Section */
+        .story-showcase {
+            padding: 6rem 2rem;
+            background: white;
+            text-align: center;
+        }
+        
+        .story-showcase h2 {
+            font-size: 2.5rem;
+            color: var(--sage-900);
+            margin-bottom: 1rem;
+        }
+        
+        .story-showcase-subtitle {
+            font-size: 1.125rem;
+            color: var(--sage-600);
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            line-height: 1.6;
+        }
+        
+        .showcase-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .showcase-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .showcase-item {
+            background: var(--sage-50);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .showcase-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .showcase-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .showcase-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--sage-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .showcase-description {
+            font-size: 0.95rem;
+            color: var(--sage-600);
+            line-height: 1.5;
+        }
+        
+        .showcase-cta {
+            background: var(--sage-700);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .showcase-cta:hover {
+            background: var(--sage-800);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+        
         /* Simple sections for now */
         .simple-section {
             padding: 6rem 2rem;
@@ -466,290 +555,4 @@
         
         .simple-section h2 {
             font-size: 2.5rem;
-            color: var(--sage-800);
-            margin-bottom: 2rem;
-        }
-        
-        .simple-section p {
-            font-size: 1.125rem;
-            color: var(--sage-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--sage-800);
-            color: white;
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-        
-        .footer h3 {
-            margin-bottom: 1rem;
-        }
-        
-        .footer p {
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header {
-                padding: 1rem;
-            }
-            
-            .nav-menu {
-                gap: 1rem;
-            }
-            
-            .trust-indicators {
-                gap: 1rem;
-            }
-            
-            .hero {
-                padding: 6rem 1rem 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <a href="#" class="logo">Your Story</a>
-            <nav class="nav-menu">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#" class="btn-primary">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                    </svg>
-                    Start Your Story
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div class="badge">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-                                <path d="M5 3v4"/>
-                                <path d="M19 17v4"/>
-                                <path d="M3 5h4"/>
-                                <path d="M17 19h4"/>
-                            </svg>
-                            AI-Powered Personal Storytelling
-                        </div>
-                    </div>
-                    
-                    <h1>
-                        Transform Your Life<br>
-                        <span class="gradient-text">Into a Beautiful Story</span>
-                    </h1>
-                    
-                    <p class="hero-description">
-                        Share your memories through guided conversations and watch AI create a personalized novel featuring your family as characters. Perfect for preserving family legacy.
-                    </p>
-
-                    <!-- Primary CTAs -->
-                    <div class="hero-buttons">
-                        <a href="#" class="hero-cta">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                            </svg>
-                            Start Your Story Now
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14"/>
-                                <path d="m12 5 7 7-7 7"/>
-                            </svg>
-                        </a>
-                        
-                        <a href="#features" class="btn-outline">
-                            See How It Works
-                        </a>
-                    </div>
-
-                    <!-- Trust Indicators -->
-                    <div class="trust-indicators">
-                        <div class="trust-item">
-                            <svg class="icon star-icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
-                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
-                            </svg>
-                            4.9/5 Customer Rating
-                        </div>
-                        <div class="trust-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7Z"/>
-                            </svg>
-                            Thousands of Stories Created
-                        </div>
-                        <div class="trust-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="m9 12 2 2 4-4"/>
-                                <path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 1 0-8.953 8.953c.55-.055.998-.398.998-.95 0-.551-.448-1.006-.999-.95a8 8 0 1 1 7.954-7.954C20.005 11.448 20.449 12 21 12Z"/>
-                            </svg>
-                            Award-Winning AI Technology
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Features & Benefits Showcase -->
-                <div class="features-grid">
-                    <!-- Grandparents Reading Image -->
-                    <div class="feature-card">
-                        <img 
-                            src="./grandparents-reading.webp.jpeg"
-                            alt="Happy grandparents reading with grandchild - family storytelling moments"
-                        />
-                        <div class="feature-overlay"></div>
-                        <div class="feature-content">
-                            <p class="feature-title">AI Character Images</p>
-                            <p class="feature-desc">Upload family photos for personalized character portraits</p>
-                        </div>
-                    </div>
-
-                    <!-- Voice Recording Image -->
-                    <div class="feature-card">
-                        <img 
-                            src="./voice-recording.webp"
-                            alt="Senior person using voice technology - easy storytelling"
-                        />
-                        <div class="feature-overlay"></div>
-                        <div class="feature-content">
-                            <p class="feature-title">Voice Controls</p>
-                            <p class="feature-desc">Share stories naturally with voice recording - no typing needed</p>
-                        </div>
-                    </div>
-
-                    <!-- Family Reading Together -->
-                    <div class="feature-card">
-                        <img 
-                            src="./family-reading.webp.jpeg"
-                            alt="Multi-generational family reading together - storytelling bonds"
-                        />
-                        <div class="feature-overlay"></div>
-                        <div class="feature-content">
-                            <p class="feature-title">Family Legacy</p>
-                            <p class="feature-desc">Create lasting memories for generations - perfect gift for grandparents</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="how-it-works">
-            <div class="container">
-                <h2>How It Works - Simple as 1, 2, 3</h2>
-                <p class="how-it-works-subtitle">Create your personalized story in just three easy steps</p>
-                
-                <div class="steps-container">
-                    <!-- Step 1 -->
-                    <div class="step-card">
-                        <div class="step-number step-1">1</div>
-                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
-                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                            <line x1="12" y1="19" x2="12" y2="23"/>
-                            <line x1="8" y1="23" x2="16" y2="23"/>
-                        </svg>
-                        <h3 class="step-title">Share Your Story</h3>
-                        <p class="step-description">Answer guided questions about your life using voice or text. Our AI listens and learns about your unique experiences.</p>
-                    </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="step-card">
-                        <div class="step-number step-2">2</div>
-                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/>
-                            <rect x="9" y="2" width="6" height="4"/>
-                        </svg>
-                        <h3 class="step-title">Add Family Photos</h3>
-                        <p class="step-description">Upload family photos and assign them to story characters. Our AI creates beautiful character portraits preserving family resemblance.</p>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="step-card">
-                        <div class="step-number step-3">3</div>
-                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                        </svg>
-                        <h3 class="step-title">Receive Your Book</h3>
-                        <p class="step-description">Get your professionally written and designed story as a digital book or printed hardcover delivered to your door.</p>
-                    </div>
-                </div>
-                
-                <div style="text-align: center;">
-                    <a href="#" class="process-cta">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-                        </svg>
-                        Begin Your Story Journey
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14"/>
-                            <path d="m12 5 7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <p class="process-subtitle">Start creating your family legacy today - no technical skills required</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Placeholder for next sections -->
-        <section id="features" class="simple-section">
-            <div class="container">
-                <h2>More sections coming next...</h2>
-                <p>Send me the next screenshot to add more components from your Replit homepage!</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <h3>Your Story</h3>
-            <p>Transforming lives into literature, one story at a time.</p>
-            <p>&copy; 2025 Your Story. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add click handlers for CTA buttons - redirect to your real purchase page
-        document.querySelectorAll('.btn-primary, .hero-cta, .process-cta').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Redirect to your backend purchase page
-                window.location.href = 'https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase';
-            });
-        });
-    </script>
-</body>
-</html>
+            color
