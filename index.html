@@ -338,6 +338,126 @@
             padding: 0 1rem;
         }
         
+        /* How It Works Section */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: var(--warm-50);
+            text-align: center;
+        }
+        
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            color: var(--sage-900);
+            margin-bottom: 1rem;
+        }
+        
+        .how-it-works-subtitle {
+            font-size: 1.125rem;
+            color: var(--sage-600);
+            margin-bottom: 4rem;
+        }
+        
+        .steps-container {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .steps-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .step-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .step-number {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .step-number.step-1 {
+            background: #4285f4;
+        }
+        
+        .step-number.step-2 {
+            background: #34a853;
+        }
+        
+        .step-number.step-3 {
+            background: #9c27b0;
+        }
+        
+        .step-icon {
+            width: 2rem;
+            height: 2rem;
+            color: var(--sage-600);
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--sage-900);
+            margin-bottom: 1rem;
+        }
+        
+        .step-description {
+            font-size: 1rem;
+            color: var(--sage-600);
+            line-height: 1.6;
+        }
+        
+        .process-cta {
+            background: var(--sage-700);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .process-cta:hover {
+            background: var(--sage-800);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .process-subtitle {
+            font-size: 1rem;
+            color: var(--sage-600);
+            margin-top: 1rem;
+        }
+        
         /* Simple sections for now */
         .simple-section {
             padding: 6rem 2rem;
@@ -530,6 +650,65 @@
             </div>
         </section>
 
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>How It Works - Simple as 1, 2, 3</h2>
+                <p class="how-it-works-subtitle">Create your personalized story in just three easy steps</p>
+                
+                <div class="steps-container">
+                    <!-- Step 1 -->
+                    <div class="step-card">
+                        <div class="step-number step-1">1</div>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                        <h3 class="step-title">Share Your Story</h3>
+                        <p class="step-description">Answer guided questions about your life using voice or text. Our AI listens and learns about your unique experiences.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="step-card">
+                        <div class="step-number step-2">2</div>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/>
+                            <rect x="9" y="2" width="6" height="4"/>
+                        </svg>
+                        <h3 class="step-title">Add Family Photos</h3>
+                        <p class="step-description">Upload family photos and assign them to story characters. Our AI creates beautiful character portraits preserving family resemblance.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step-card">
+                        <div class="step-number step-3">3</div>
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        <h3 class="step-title">Receive Your Book</h3>
+                        <p class="step-description">Get your professionally written and designed story as a digital book or printed hardcover delivered to your door.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="#" class="process-cta">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                        </svg>
+                        Begin Your Story Journey
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <p class="process-subtitle">Start creating your family legacy today - no technical skills required</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Placeholder for next sections -->
         <section id="features" class="simple-section">
             <div class="container">
@@ -564,7 +743,7 @@
         });
 
         // Add click handlers for CTA buttons - redirect to your real purchase page
-        document.querySelectorAll('.btn-primary, .hero-cta').forEach(button => {
+        document.querySelectorAll('.btn-primary, .hero-cta, .process-cta').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 // Redirect to your backend purchase page
