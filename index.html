@@ -415,11 +415,12 @@
             });
         });
 
-        // Add click handlers for CTA buttons
+        // Add click handlers for CTA buttons - redirect to your real purchase page
         document.querySelectorAll('.btn-primary, .hero-cta').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
-                alert('🚀 Ready to deploy! This will connect to your backend at: https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev\n\nNext steps:\n1. Upload this file to Netlify\n2. I\'ll update your backend CORS settings\n3. Your site will be live!');
+                // Redirect to your backend purchase page
+                window.location.href = 'https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase';
             });
         });
     </script>
