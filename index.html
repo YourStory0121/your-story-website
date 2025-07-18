@@ -338,23 +338,283 @@
             padding: 0 1rem;
         }
         
-        /* Simple sections for now */
-        .simple-section {
+        /* How It Works Section */
+        .how-it-works {
             padding: 6rem 2rem;
+            background: var(--warm-50);
             text-align: center;
         }
         
-        .simple-section h2 {
+        .how-it-works h2 {
             font-size: 2.5rem;
-            color: var(--sage-800);
-            margin-bottom: 2rem;
+            color: var(--sage-900);
+            margin-bottom: 1rem;
         }
         
-        .simple-section p {
+        .how-it-works-subtitle {
+            font-size: 1.125rem;
+            color: var(--sage-600);
+            margin-bottom: 4rem;
+        }
+        
+        .steps-container {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .steps-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .step-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .step-number {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .step-number.step-1 {
+            background: #4285f4;
+        }
+        
+        .step-number.step-2 {
+            background: #34a853;
+        }
+        
+        .step-number.step-3 {
+            background: #9c27b0;
+        }
+        
+        .step-icon {
+            width: 2rem;
+            height: 2rem;
+            color: var(--sage-600);
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--sage-900);
+            margin-bottom: 1rem;
+        }
+        
+        .step-description {
+            font-size: 1rem;
+            color: var(--sage-600);
+            line-height: 1.6;
+        }
+        
+        .process-cta {
+            background: var(--sage-700);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .process-cta:hover {
+            background: var(--sage-800);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .process-subtitle {
+            font-size: 1rem;
+            color: var(--sage-600);
+            margin-top: 1rem;
+        }
+        
+        /* See Your Story Come to Life Section */
+        .story-showcase {
+            padding: 6rem 2rem;
+            background: white;
+            text-align: center;
+        }
+        
+        .story-showcase h2 {
+            font-size: 2.5rem;
+            color: var(--sage-900);
+            margin-bottom: 1rem;
+        }
+        
+        .story-showcase-subtitle {
             font-size: 1.125rem;
             color: var(--sage-600);
             max-width: 600px;
+            margin: 0 auto 4rem;
+            line-height: 1.6;
+        }
+        
+        .showcase-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .showcase-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .showcase-item {
+            background: var(--sage-50);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .showcase-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .showcase-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .showcase-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--sage-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .showcase-description {
+            font-size: 0.95rem;
+            color: var(--sage-600);
+            line-height: 1.5;
+        }
+        
+        .showcase-cta {
+            background: var(--sage-700);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .showcase-cta:hover {
+            background: var(--sage-800);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--sage-50);
+            text-align: center;
+        }
+        
+        .pricing h2 {
+            font-size: 2.5rem;
+            color: var(--sage-900);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-subtitle {
+            font-size: 1.125rem;
+            color: var(--sage-600);
+            margin-bottom: 4rem;
+        }
+        
+        .pricing-card {
+            max-width: 600px;
             margin: 0 auto;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border: 2px solid var(--sage-300);
+        }
+        
+        .pricing-badge {
+            background: var(--sage-700);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sage-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-period {
+            color: var(--sage-600);
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .pricing-features .check-icon {
+            color: var(--sage-700);
+            width: 1.25rem;
+            height: 1.25rem;
         }
         
         /* Footer */
@@ -530,11 +790,144 @@
             </div>
         </section>
 
-        <!-- Placeholder for next sections -->
-        <section id="features" class="simple-section">
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works">
             <div class="container">
-                <h2>More sections coming next...</h2>
-                <p>Send me the next screenshot to add more components from your Replit homepage!</p>
+                <h2>How It Works</h2>
+                <p class="how-it-works-subtitle">Transform your life story into a beautiful novel in three simple steps</p>
+                
+                <div class="steps-container">
+                    <!-- Step 1 -->
+                    <div class="step-card">
+                        <div class="step-number step-1">1</div>
+                        <h3 class="step-title">Share Your Story</h3>
+                        <p class="step-description">Answer guided questions about your life experiences. Use voice recording or typing - whatever feels natural to you.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="step-card">
+                        <div class="step-number step-2">2</div>
+                        <h3 class="step-title">AI Transforms</h3>
+                        <p class="step-description">Our advanced AI crafts your memories into a compelling novel, preserving your authentic voice and experiences.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step-card">
+                        <div class="step-number step-3">3</div>
+                        <h3 class="step-title">Receive Your Book</h3>
+                        <p class="step-description">Get your professionally printed hardcover book delivered to your door, plus digital versions to share with family.</p>
+                    </div>
+                </div>
+                
+                <a href="#" class="process-cta">Start Your Story Today</a>
+                <p class="process-subtitle">No writing experience needed • Voice recording available • Family legacy preserved forever</p>
+            </div>
+        </section>
+        
+        <!-- See Your Story Come to Life Section -->
+        <section id="story-showcase" class="story-showcase">
+            <div class="container">
+                <h2>See Your Story Come to Life</h2>
+                <p class="story-showcase-subtitle">From precious memories to professionally bound books - see how we transform real life stories into beautiful novels</p>
+                
+                <div class="showcase-grid">
+                    <!-- Professional Cover Design -->
+                    <div class="showcase-item">
+                        <img 
+                            src="Professional Cover design_1752776185288.jpg"
+                            alt="Professional book cover design with elegant typography"
+                            class="showcase-image"
+                        />
+                        <h3 class="showcase-title">Custom Cover Design</h3>
+                        <p class="showcase-description">Every book receives a professionally designed cover that reflects your unique story and personality.</p>
+                    </div>
+                    
+                    <!-- Rich Interior Layout -->
+                    <div class="showcase-item">
+                        <img 
+                            src="Rich Interior Layout_1752776214295.jpg"
+                            alt="Beautiful interior page layout with premium typography"
+                            class="showcase-image"
+                        />
+                        <h3 class="showcase-title">Premium Layout</h3>
+                        <p class="showcase-description">Elegant typography and thoughtful formatting make your story a pleasure to read and treasure forever.</p>
+                    </div>
+                    
+                    <!-- Complete Memoir -->
+                    <div class="showcase-item">
+                        <img 
+                            src="Complete Memoir _1752776156396.webp"
+                            alt="Finished memoir book showing professional quality"
+                            class="showcase-image"
+                        />
+                        <h3 class="showcase-title">Your Finished Book</h3>
+                        <p class="showcase-description">A beautiful hardcover book that preserves your legacy and creates a treasured family heirloom.</p>
+                    </div>
+                </div>
+                
+                <a href="#" class="showcase-cta">Create Your Book Now</a>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>Simple, Transparent Pricing</h2>
+                <p class="pricing-subtitle">Everything included - no hidden fees, no subscriptions</p>
+                
+                <div class="pricing-card">
+                    <div class="pricing-badge">Complete Package</div>
+                    <div class="pricing-amount">£99</div>
+                    <p class="pricing-period">One-time payment • Everything included</p>
+                    
+                    <ul class="pricing-features">
+                        <li>
+                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            AI-guided story collection with voice recording
+                        </li>
+                        <li>
+                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Professional editing and story development
+                        </li>
+                        <li>
+                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Premium hardcover book printing
+                        </li>
+                        <li>
+                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Custom cover design
+                        </li>
+                        <li>
+                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Digital PDF and EPUB versions
+                        </li>
+                        <li>
+                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Free shipping anywhere in the UK
+                        </li>
+                        <li>
+                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Family photos integration available
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="process-cta">Get Started Now</a>
+                    <p class="process-subtitle">30-day money-back guarantee • Secure payment • No recurring charges</p>
+                </div>
             </div>
         </section>
     </main>
