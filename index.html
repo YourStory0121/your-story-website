@@ -172,11 +172,14 @@
         .hero-container {
             max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
         
         .hero-content {
-            text-align: center;
-            margin-bottom: 4rem;
+            text-align: left;
         }
         
         .hero h1 {
@@ -208,14 +211,14 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 3rem;
         }
         
         @media (min-width: 640px) {
             .hero-buttons {
                 flex-direction: row;
-                justify-content: center;
+                justify-content: flex-start;
             }
         }
         
@@ -244,11 +247,23 @@
         .trust-indicators {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             gap: 2rem;
             color: var(--sage-600);
-            margin-bottom: 4rem;
+            margin-bottom: 0;
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
         
         .trust-item {
@@ -646,10 +661,32 @@
             
             .trust-indicators {
                 gap: 1rem;
+                justify-content: center;
             }
             
             .hero {
                 padding: 6rem 1rem 2rem;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                align-items: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .trust-indicators {
+                justify-content: center;
             }
         }
     </style>
@@ -746,46 +783,12 @@
                     </div>
                 </div>
 
-                <!-- Features & Benefits Showcase -->
-                <div class="features-grid">
-                    <!-- Grandparents Reading Image -->
-                    <div class="feature-card">
-                        <img 
-                            src="grandparents-reading.webp.jpeg"
-                            alt="Happy grandparents reading with grandchild - family storytelling moments"
-                        />
-                        <div class="feature-overlay"></div>
-                        <div class="feature-content">
-                            <p class="feature-title">AI Character Images</p>
-                            <p class="feature-desc">Upload family photos for personalized character portraits</p>
-                        </div>
-                    </div>
-
-                    <!-- Voice Recording Image -->
-                    <div class="feature-card">
-                        <img 
-                            src="voice-recording.webp"
-                            alt="Senior person using voice technology - easy storytelling"
-                        />
-                        <div class="feature-overlay"></div>
-                        <div class="feature-content">
-                            <p class="feature-title">Voice Controls</p>
-                            <p class="feature-desc">Share stories naturally with voice recording - no typing needed</p>
-                        </div>
-                    </div>
-
-                    <!-- Family Reading Together -->
-                    <div class="feature-card">
-                        <img 
-                            src="family-reading.webp.jpeg"
-                            alt="Multi-generational family reading together - storytelling bonds"
-                        />
-                        <div class="feature-overlay"></div>
-                        <div class="feature-content">
-                            <p class="feature-title">Family Legacy</p>
-                            <p class="feature-desc">Create lasting memories for generations - perfect gift for grandparents</p>
-                        </div>
-                    </div>
+                <!-- Hero Image -->
+                <div class="hero-image">
+                    <img 
+                        src="family-reading.webp.jpeg"
+                        alt="Multi-generational family reading together - preserving stories and memories"
+                    />
                 </div>
             </div>
         </section>
