@@ -521,7 +521,7 @@
         
         .showcase-image {
             width: 100%;
-            height: 200px;
+            height: 280px;
             object-fit: cover;
             border-radius: 0.5rem;
             margin-bottom: 1.5rem;
@@ -816,7 +816,7 @@
             margin-bottom: 1rem;
         }
         
-        /* Responsive Design */
+        /* Enhanced Mobile Responsive Design */
         @media (max-width: 768px) {
             .header {
                 padding: 1rem;
@@ -824,10 +824,41 @@
             
             .nav-menu {
                 gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem !important;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .hero-image {
+                order: -1;
+                max-width: 300px;
+                margin: 0 auto;
             }
             
             .trust-indicators {
                 gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
                 justify-content: center;
             }
             
@@ -854,6 +885,42 @@
             
             .trust-indicators {
                 justify-content: center;
+            }
+            
+            .trust-item {
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .how-it-works,
+            .story-showcase {
+                padding: 3rem 1rem;
+            }
+            
+            .how-it-works h2,
+            .story-showcase h2 {
+                font-size: 2rem !important;
+            }
+            
+            .showcase-item,
+            .step-card {
+                padding: 1.5rem;
+            }
+            
+            .showcase-image {
+                height: 240px !important;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .pricing {
+                padding: 3rem 1rem;
+            }
+            
+            .pricing h2 {
+                font-size: 2rem !important;
             }
         }
     </style>
